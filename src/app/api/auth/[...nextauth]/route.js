@@ -20,24 +20,6 @@ export const authOption = {
       },
     }),
 
-    CredentialsProvider({
-      // get email and password from login form
-      async authorize(userInfo) {
-        // define object structure
-        const newUserInfo = {
-          firstname: userInfo.firstname,
-          lastname: userInfo.lastname,
-          gender: userInfo.gender,
-          email: userInfo.email,
-          password: userInfo.password,
-        };
-        //  call login services
-        const Register = await registerService(newUserInfo);
-        console.log("register",Register)
-        return Register;
-      },
-    }),
-
   ],
   // used to set token into cookies
   callbacks: {
